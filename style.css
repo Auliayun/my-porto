@@ -1,0 +1,1019 @@
+html {
+    scroll-behavior: smooth;
+}
+#home, #about, #project, #skills {
+    align-items: center;
+    position: relative;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #263961;
+  border-radius: 30px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  z-index: 6;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 34px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+header ul li:hover a {
+  color: #fca311; /* Change text color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.lets-talk {
+  background-color: #fff;
+  color: #263961;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.lets-talk:hover {
+  background-color: #bcc2ce;
+  color: #263961;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  max-width: 1000px;
+  margin-top: 70px;
+  position: relative;
+}
+
+.profile-teks {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  text-wrap: balance;
+}
+
+h1 {
+  margin-bottom: 5px;
+  margin-top: 7px; 
+}
+
+h1 span{
+  color: #fca311;
+}
+
+p {
+  margin-bottom: 35px;
+  margin-top: 5px;
+  font-size: 14px; 
+}
+
+.view-here {
+  padding: 25px 0px;
+}
+
+.view-porto {
+  background-color: #263961;
+  color: #ffff;
+  padding: 10px 60px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  min-width: 20px;
+  max-width: 20px;
+  margin-right: 15px;
+}
+
+.view-porto:hover {
+  background-color: #bcc2ce;
+  color: #263961;
+}
+
+.here-me {
+  color: #263961;
+  border:2px solid   #263961;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  min-width: 100px;
+  max-width: 200px; 
+}
+
+.here-me:hover {
+  background-color: #bcc2ce;
+  color: #263961;
+  border:2px solid   #bcc2ce;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start; /* Atur posisi ikonnya */
+  gap: 20px; /* Jarak antar ikon */
+  margin-top: 50px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  background-color: #bcc2ce;
+  border-radius: 20%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease;
+}
+
+.social-icons i {
+  color: #263961;
+  font-size: 25px;
+}
+
+.social-icons a:hover {
+  background-color: #798eb6;
+}
+
+.social-icons a:hover i {
+  color: #fff;
+}
+
+.profile-image {
+  margin-top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0px;
+}
+
+.profile-image .intro-text {
+  position: absolute;
+  left: -200px; /* Adjust this value as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #263961;
+  font-weight: bold;
+}
+
+.profile-image .ellipse {
+  position: absolute;
+  background-color: #fca311; /* Warna ellipse */
+  border-radius: 85% 20% 30% 90% / 36% 25% 95% 85%;
+  width: 302px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
+  height: 280px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
+  z-index: 1;
+  right: 0; /* Menempatkan elips di belakang gambar */
+  top: 58%;
+  left: 65%;
+  transform: translateY(-50%);
+}
+
+.profile-image img {
+  max-width: 300px;
+  height: auto;
+  position: absolute; /* Memposisikan gambar auliaayun secara absolut */
+  z-index: 2; /* Mengatur layer gambar auliaayun menjadi layer kedua */
+  right: 0; /* Menempatkan gambar di belakang ellipse */
+  top: 58%;
+  left: 65%;
+  transform: translateY(-50%);
+}
+
+.profile-image img:hover {
+  transform: scale(1.1) translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-images {
+  position: absolute; /* Memposisikan skill-images secara absolut */
+  z-index: 3; /* Mengatur layer skill-images menjadi layer terakhir */
+  right: 0; /* Menempatkan skill-images di belakang gambar auliaayun */
+  top: 58%;
+  left: 62%;
+  transform: translateY(-50%);
+}
+
+
+
+.skill-images img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.skill-images img:nth-child(1) {
+  /* Styling for first image (uix) */
+  margin-top: -100px;
+  left: 65%;
+}
+
+.skill-images img:nth-child(2) {
+  /* Styling for second image (fe) */
+  margin-left: -250px;
+  margin-top: 80px;
+  left: 65%;
+}
+
+.skill-teks {
+  margin-top: 25px;
+  background-color: #e9ebef;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.slide {
+  white-space: nowrap;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide div {
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+}
+
+.skill-teks p {
+  font-size: 1.2rem;
+  color: #516181;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+.left-to-right {
+  animation: left-to-right 10s infinite linear;
+}
+
+@keyframes left-to-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(20%);
+  }
+}
+
+.about-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+.about-header h1 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+  color: #555;
+    font-size: 14px;
+    line-height: 1.6rem;
+    text-align: justify;
+}
+
+/* Education Experience */
+.experience {
+  width: 75%;
+  padding-top: 20px;
+}
+
+.experience {
+  padding-right: calc(10% -30px);
+}
+
+main.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.col div.title{
+  font-family: helvetica;
+  color: #263961;
+}
+
+.col .content {
+  padding: 0px 20px;
+  border-left: 2px solid #bababa;
+}
+
+.col .content .box {
+  position: relative;
+  padding: 8px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-bottom: 20px;
+}
+
+.col .content .box:hover {
+  box-shadow: 0px 3px 12px 0px #ccc;
+  border: 1px solid transparent;
+}
+
+.col .content .box::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  right: calc(100% + 14px);
+  top: 0;
+  background-color: #fca311;
+  border: 2px solid white;
+}
+
+.box h6 {
+  position: relative;
+  color: #333;
+  margin: 8px 0px;
+}
+
+.box h4 {
+  margin: auto;
+  color: #263961;
+}
+.box h5 {
+  padding: 10px 0px 6px;
+  font-family: helvetica;
+  color: #444;
+  margin: auto;
+}
+
+.box p {
+  line-height: 1.2;
+  color: #666;
+  font-size: 10px;
+}
+
+@media(max-width: 768px){
+  main.row {
+    grid-template-columns: 1fr;
+  }
+
+  .row .col:nth-child(2){
+    margin-top: 30px;
+  }
+}
+
+/* Education Experience End */
+
+.what {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.what-i-do {
+    text-align: center;
+    margin-top: 50px;
+    max-width: 900px;
+}
+
+.what-i-do h4 {
+    color: #fca311;
+}
+
+.what-i-do p {
+    color: #555;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.do-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.do-box h4 {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.do-box p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.do-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    .skills-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.project-main {
+    max-width: 1000px;
+    margin: 50 auto;
+    padding: 50px 20px;
+}
+
+.project-main h1 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-main p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.tab-box {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    list-style-type: none; /* Menghilangkan bullet pada list */
+}
+
+.tab-btn {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #333; /* Warna teks */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s, border-bottom 0.3s; /* Transisi halus untuk hover */
+    border-bottom: 2px solid transparent; 
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.tab-btn.active, .tab-btn:hover { 
+  color: #fca311; 
+  border-bottom: 2px solid #fca311;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project {
+    height: 380px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    width: 45%; /* Agar dua project berdampingan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Pastikan gambar berada dalam box */
+    display: none;
+  }
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Batasi tinggi maksimal gambar agar tetap proporsional */
+    object-fit: cover; /* Pastikan gambar selalu di dalam box */
+    border-bottom: 1px solid #ddd;
+}
+
+.project-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Rata kiri */
+    justify-content: space-between;
+}
+
+
+h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+.project-description {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.project-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design*/
+@media screen and (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 100%;
+    }
+}
+
+
+/* Skills Start*/
+.skills {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: 50px 20px;
+  padding-bottom: 90px;
+  align-items: flex-start;
+}
+
+.skills h1 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skills p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.skill-icons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.icon:hover {
+    transform: translateY(-8px);
+}
+
+.contact {
+    width: 100vw;
+    background-color: #263961;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-content {
+    display: flex;
+    max-width: 1200px; /* Lebar maksimal */
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.contact-info {
+    flex: 0.8;
+}
+
+.contact h1 {
+    color: #ffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #ddd;
+    text-align: left;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact form {
+    padding: 20px;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.contact textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #fca311;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button[type="submit"]:hover {
+    background-color: #b37613;
+}
+
+.footer {
+  background-color: #1b2741;
+  color: #b37613;
+  padding: 20px;
+  font-weight: bold;
+  width: 100vw;
+  text-align: center;
+
+}
+
+/* Popup */
+.popup-form {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Content box for the popup */
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for elegance */
+    animation: fadeIn 0.3s ease-in-out; /* Add fade-in animation */
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff0000; /* Change color on hover */
+}
+
+/* Form elements styling */
+.popup-content form input[type="text"],
+.popup-content form input[type="email"],
+.popup-content form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.popup-content form input[type="text"]:focus,
+.popup-content form input[type="email"]:focus,
+.popup-content form textarea:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none;
+}
+
+/* Textarea specific styling */
+.popup-content form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Submit button styling */
+.popup-content form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.popup-content form button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.popup-content form button[type="submit"]:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive untuk layar kecil (tablet & mobile) */
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        align-items: center;
+    }
+    
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    header ul li a {
+        font-size: 16px;
+    }
+
+    .lets-talk {
+        font-size: 16px;
+        padding: 8px 16px;
+        margin-top: 10px;
+    }
+
+    /* Main Container */
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-teks {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .profile-image {
+        margin-top: 20px;
+    }
+
+    .skill-images {
+        display: none; /* Sembunyikan gambar skill pada layar kecil */
+    }
+
+    /* Skill Teks */
+    .skill-teks {
+        padding: 10px;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 20px;
+    }
+
+    /* Experience Section */
+    main.row {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    /* What-I-Do Section */
+    .skills-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Projects Section */
+    .project-main {
+        padding: 20px;
+    }
+
+    .projects {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Skills Section */
+    .skill-icons {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Responsive untuk layar yang sangat kecil (ponsel) */
+@media screen and (max-width: 480px) {
+    /* Navbar */
+    header ul {
+        gap: 5px;
+    }
+
+    /* Main Heading */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h1 span {
+        font-size: 1.5rem;
+    }
+
+    .profile-container {
+        padding: 10px;
+    }
+
+    /* Profile Image */
+    .profile-image img {
+        max-width: 200px;
+    }
+
+    /* Contact Section */
+    .contact-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+    
+    .contact form input[type="text"],
+    .contact form input[type="email"],
+    .contact form textarea {
+        font-size: 1rem;
+    }
+
+    .contact button[type="submit"] {
+        font-size: 1rem;
+    }
+}
