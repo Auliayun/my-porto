@@ -43,6 +43,56 @@ header {
   z-index: 6;
 }
 
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 5px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  margin: 0px;
+  width: 21px;
+  height: 20px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.5s;
+}
+
+
+ /* Hamburger animasi */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, 1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+
 .logo {
   display: flex;
   align-items: center;
@@ -115,6 +165,70 @@ header ul li:hover a {
   position: relative;
 }
 
+.profile-image {
+  margin-top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0px;
+}
+
+.profile-image .ellipse {
+  position: absolute;
+  background-color: #fca311; /* Warna ellipse */
+  border-radius: 85% 20% 30% 90% / 36% 25% 95% 85%;
+  width: 302px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
+  height: 280px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
+  z-index: 1;
+  right: 0; /* Menempatkan elips di belakang gambar */
+  top: 58%;
+  left: 65%;
+  transform: translateY(-50%);
+}
+
+.profile-image img {
+  max-width: 300px;
+  height: auto;
+  position: absolute; /* Memposisikan gambar auliaayun secara absolut */
+  z-index: 2; /* Mengatur layer gambar auliaayun menjadi layer kedua */
+  right: 0; /* Menempatkan gambar di belakang ellipse */
+  top: 70%;
+  left: 65%;
+  transform: translateY(-50%);
+}
+
+.profile-image img:hover {
+  transform: scale(1.1) translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-images {
+  position: absolute; /* Memposisikan skill-images secara absolut */
+  z-index: 3; /* Mengatur layer skill-images menjadi layer terakhir */
+  right: 0; /* Menempatkan skill-images di belakang gambar auliaayun */
+  top: 58%;
+  left: 62%;
+  transform: translateY(-50%);
+}
+
+.skill-images img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.skill-images img:nth-child(1) {
+  margin-top: -100px;
+  left: 65%;
+}
+
+.skill-images img:nth-child(2) {
+  /* Styling for second image (fe) */
+  margin-left: -250px;
+  margin-top: 80px;
+  left: 65%;
+}
+
 .profile-teks {
   display: flex;
   flex-direction: column;
@@ -122,19 +236,21 @@ header ul li:hover a {
   text-wrap: balance;
 }
 
-h1 {
+.profile-teks h1 {
   margin-bottom: 5px;
   margin-top: 7px; 
 }
 
-h1 span{
+.profile-teks h1 span{
   color: #fca311;
 }
 
-p {
+.profile-teks p {
   margin-bottom: 35px;
   margin-top: 5px;
-  font-size: 14px; 
+  font-size: 14px;
+  width: 700px;
+  margin-right: 350px;
 }
 
 .view-here {
@@ -211,85 +327,8 @@ p {
   color: #fff;
 }
 
-.profile-image {
-  margin-top: 0px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 0px;
-}
-
-.profile-image .intro-text {
-  position: absolute;
-  left: -200px; /* Adjust this value as needed */
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
-  color: #263961;
-  font-weight: bold;
-}
-
-.profile-image .ellipse {
-  position: absolute;
-  background-color: #fca311; /* Warna ellipse */
-  border-radius: 85% 20% 30% 90% / 36% 25% 95% 85%;
-  width: 302px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
-  height: 280px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
-  z-index: 1;
-  right: 0; /* Menempatkan elips di belakang gambar */
-  top: 58%;
-  left: 65%;
-  transform: translateY(-50%);
-}
-
-.profile-image img {
-  max-width: 300px;
-  height: auto;
-  position: absolute; /* Memposisikan gambar auliaayun secara absolut */
-  z-index: 2; /* Mengatur layer gambar auliaayun menjadi layer kedua */
-  right: 0; /* Menempatkan gambar di belakang ellipse */
-  top: 58%;
-  left: 65%;
-  transform: translateY(-50%);
-}
-
-.profile-image img:hover {
-  transform: scale(1.1) translateY(-50%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.skill-images {
-  position: absolute; /* Memposisikan skill-images secara absolut */
-  z-index: 3; /* Mengatur layer skill-images menjadi layer terakhir */
-  right: 0; /* Menempatkan skill-images di belakang gambar auliaayun */
-  top: 58%;
-  left: 62%;
-  transform: translateY(-50%);
-}
-
-
-
-.skill-images img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.skill-images img:nth-child(1) {
-  /* Styling for first image (uix) */
-  margin-top: -100px;
-  left: 65%;
-}
-
-.skill-images img:nth-child(2) {
-  /* Styling for second image (fe) */
-  margin-left: -250px;
-  margin-top: 80px;
-  left: 65%;
-}
-
 .skill-teks {
-  margin-top: 25px;
+  margin-top: 30px;
   background-color: #e9ebef;
   display: flex;
   text-align: center;
@@ -870,40 +909,57 @@ p {
 
 /* Responsive untuk layar kecil (tablet & mobile) */
 @media screen and (max-width: 768px) {
-    /* Navbar */
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    align-items: center;
+    overflow-x: hidden;
+    flex-direction: column;
+    }
+  /* Navbar */
     header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 0;
-        align-items: center;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      width: 700px;
+      position: fixed;
+      z-index: 6;
+      padding-right: 20px;
     }
     
-    header ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
     header ul li a {
-        font-size: 16px;
+      font-size: 10px;
     }
 
+    .logo img {
+      height: 30px;
+      margin: 4px 10px 0px 0px;
+    }
+
+    .logo span {
+      font-size: 10px;
+    }
     .lets-talk {
-        font-size: 16px;
-        padding: 8px 16px;
-        margin-top: 10px;
+        display: none;
+    }
+
+    .menu-toggle {
+      display: none;
     }
 
     /* Main Container */
     .main-container {
-        flex-direction: column;
+        width: 100%;
+        padding: 0 15px;
+        margin-top: 30px;
         align-items: center;
-        margin-top: 100px;
-    }
-
-    .profile-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     .profile-teks {
@@ -912,16 +968,67 @@ p {
     }
 
     .profile-image {
-        margin-top: 20px;
+      margin-top: 0px;
+      width: 90%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .profile-image .ellipse {
+      position: absolute;
+      background-color: #fca311; /* Warna ellipse */
+      border-radius: 85% 20% 30% 90% / 36% 25% 95% 85%;
+      width: 205px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
+      height: 180px; /* Ukuran ellipse, sesuaikan sesuai kebutuhan */
+      z-index: 1;
+      right: 0; 
+      top: 70%;
+      left: 37%;
+      transform: translateY(90%);
     }
 
-    .skill-images {
-        display: none; /* Sembunyikan gambar skill pada layar kecil */
+    .profile-image img {
+      max-width: 200px;
+      height: auto;
+      position: absolute; /* Memposisikan gambar auliaayun secara absolut */
+      z-index: 2; /* Mengatur layer gambar auliaayun menjadi layer kedua */
+      right: 0; /* Menempatkan gambar di belakang ellipse */
+      top: 100%;
+      transform: translateX(-100%);
+    }
+
+    .profile-image .skill-images {
+      top: 140%;
+      left: 30%;
+    }
+
+    .skill-images img:nth-child(1) {
+      margin-top: -20px;
+      left: 65%;
+    }
+
+    .skill-images img:nth-child(2) {
+      margin-left: -250px;
+      margin-top: 70px;
+      left: 80%;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      width: 30px;
+      height: 30px;
     }
 
     /* Skill Teks */
     .skill-teks {
         padding: 10px;
+        margin-top: 200px;
     }
 
     /* About Section */
@@ -973,11 +1080,57 @@ p {
     }
 }
 
+
 /* Responsive untuk layar yang sangat kecil (ponsel) */
 @media screen and (max-width: 480px) {
     /* Navbar */
+    header{
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      width: 380px;
+      position: fixed;
+      z-index: 6;
+      padding-right: 20px;
+    }
+
     header ul {
-        gap: 5px;
+        display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+  .menu-toggle span {
+    width: 10px;
+  }
+
+  .menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, 1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+    .lets-talk {
+      display: none;
     }
 
     /* Main Heading */
